@@ -150,7 +150,8 @@ func! s:parse_name(arg)
     let name = split( substitute(uri,'/\?\.git\s*$','','i') ,'\/')[-1]
   else
     let name = arg
-    let uri  = git_proto.'://github.com/vim-scripts/'.name.'.git'
+    "let uri  = git_proto.'://github.com/vim-scripts/'.name.'.git'
+    let uri  = 'git@'.'github.com:vim-scripts/'.name.'.git'
   endif
   return {'name': name, 'uri': uri, 'name_spec': arg }
 endf
