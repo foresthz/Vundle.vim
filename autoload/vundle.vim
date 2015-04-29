@@ -26,7 +26,7 @@ com! -nargs=0         PluginDocs
 " Aliases
 com! PluginUpdate PluginInstall!
 
-" Vundle Aliases
+" Vundle Aliases,定义命令别称
 com! -nargs=? -bang -complete=custom,vundle#scripts#complete VundleInstall PluginInstall<bang> <args>
 com! -nargs=? -bang -complete=custom,vundle#scripts#complete VundleSearch  PluginSearch<bang> <args>
 com! -nargs=? -bang                                          VundleClean   PluginClean<bang>
@@ -64,6 +64,7 @@ func! vundle#rc(...) abort
   let g:updated_bundles = []
   let g:vundle_log = []
   let g:vundle_changelog = ['Updated Plugins:']
+  " 调用init函数,config放在vundle文件夹中
   call vundle#config#init()
 endf
 

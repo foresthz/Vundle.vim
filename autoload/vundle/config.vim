@@ -38,6 +38,7 @@ endf
 " Start a new bundles list and make sure the runtimepath does not contain
 " directories from a previous call. In theory, this should only be called
 " once.
+" 定义init函数
 " ---------------------------------------------------------------------------
 func! vundle#config#init()
   if !exists('g:bundles') | let g:bundles = [] | endif

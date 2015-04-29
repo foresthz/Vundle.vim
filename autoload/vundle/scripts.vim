@@ -38,6 +38,7 @@ endf
 " return  -- all valid plugin names from vim-scripts.org as completion
 "            candidates, see also :h command-completion-custom
 " ---------------------------------------------------------------------------
+" 搜索调用的是这个函数
 func! vundle#scripts#complete(a,c,d)
   return join(s:load_scripts(0),"\n")
 endf
@@ -205,6 +206,7 @@ endf
 " to     -- the filename (string) to save the database to
 " return -- 0 on success, 1 if an error occurred
 " ---------------------------------------------------------------------------
+" 下载代码,通过curl或者wget来完成
 func! s:fetch_scripts(to)
   let scripts_dir = fnamemodify(expand(a:to, 1), ":h")
   if !isdirectory(scripts_dir)
